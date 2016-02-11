@@ -1,0 +1,35 @@
+body {
+    background-color: #EEE;
+}
+.container {
+    background-color: #F0F0F0;
+}
+.box {
+    background-color: #FFF;
+    border: 1px solid #EEE;
+    margin: 4px 0;
+    padding: 0 10px 10px 10px;
+}
+.form-control {
+    background-color: #F2F2F2;
+}
+.glyphicon {
+    /*font-size: 1.2em;*/
+    padding: 6px 8px;
+}
+ul.row {
+    /*margin-right: 30px;*/
+}
+.list-unstyled li {
+    margin: 6px 0 6px 16px;
+    padding: 4px 10px;
+    border: 1px solid #DDD;
+    background-color: #EEE;
+}
+.list-unstyled li a {
+    color: #333;
+    text-decoration: none;
+}
+#error {
+    color: red;
+}

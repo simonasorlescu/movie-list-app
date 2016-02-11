@@ -1,0 +1,48 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>Movie List App</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class='text-center'>Movie List App</h1>
+            <div class='box'>
+                <form action="/" method="POST" name='form1'>
+                    <h3>Add a movie</h3>
+                    <div id='error'>
+                        {% if error %}
+                            {{ error }}
+                        {% endif %}
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-5'><input type="text" name="title" placeholder='Movie Title' class='form-control' /></div>
+                        <div class='col-md-2'><input type="text" name="year" placeholder='year' class='form-control' /></div>
+                        <div class='col-md-4'><input type="text" name="imdb" placeholder='IMDb Code' class='form-control' /></div>
+                        <div class='col-md-1'><button class='glyphicon glyphicon-plus' type='submit'></button></div>
+                    </div>
+                </form>
+            </div>
+            <div class='box'>
+                <h3>Your Movie List</h3>
+                <ul class='row list-unstyled'>
+                    {% for movie in movies %}
+                        <div>
+                            <div class="col-md-11">
+                                <li><a href="http://www.imdb.com/title/{{ movie.imdb }}">{{ movie.title }}, {{ movie.year }}</a></li>
+                            </div>
+                            <form class="col-md-1" action="/{{ movie.imdb }}" method="POST">
+                                <input type='submit' class='glyphicon glyphicon-remove' value='x'>
+                            </form>
+                        </div>
+                    {% else %}
+                        <li>No movies found.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <!-- // <script src='https://code.jquery.com/jquery-2.2.0.min.js'></script> -->
+        <!-- // <script src='script.js'></script> -->
+    </body>
+</html>
